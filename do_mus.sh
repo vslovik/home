@@ -56,7 +56,7 @@ do
 			wav_file=` echo $to_encode_file | sed "s/[-']//g" | sed 's/[ .]/_/g' | sed "s/.$suffix/.wav/"`
 			prefix=`echo $wav_file | sed 's/.wav/_/'`
 			wav_file="$dir/$wav_file"
-			num_chunked=`ls -1 | grep "$prefix" | wc -l`
+			num_chunked=`ls -1 | grep "$prefix" | grep wav |  wc -l`
 			num_wavs=`ls -1 | grep $prefix | grep ".wav" | wc -l`
 			num_oggs=`ls -1 | grep $prefix | grep ".ogg" | wc -l`
 			echo $prefix
